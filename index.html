@@ -1,113 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your AI Consulting Business</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #333;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav li {
-            margin: 0;
-        }
-        nav a {
-            display: block;
-            padding: 14px 20px;
-            color: white;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        main {
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Freelance AI Enthusiast: Personal Consulting on ChatGPT and AI Use Cases" />
+  <meta name="keywords" content="AI, Consulting, ChatGPT, Freelance, Small Businesses" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal AI Consulting</title>
+  
+  <!-- Open Graph Meta Tags for Social Sharing -->
+  <meta property="og:title" content="Personal AI Consulting">
+  <meta property="og:description" content="Freelance AI Enthusiast: Personal Consulting on ChatGPT and AI Use Cases">
+  <meta property="og:image" content="https://yourusername.github.io/images/og-image.jpg"> <!-- Replace with your image URL -->
+  <meta property="og:url" content="https://yourusername.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Font Awesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pIVq/3kw3M9ycDyMtq2ipVdpF2GmKd+uONJk+4SDb0xHVVqz7G1Q2Q5IYwV9UEIYk+HlwSohIR5UMcSwpR4gVA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* ------------------------------ 
+       SIMPLE RESET
+    ------------------------------ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      color: #ddd;                /* Light text on dark background */
+      background-color: #121212;  /* Dark background */
+      scroll-behavior: smooth;    /* Smooth scrolling */
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ------------------------------ 
+       HEADER & NAV
+    ------------------------------ */
+    header {
+      background-color: #1b1b1b;
+      color: #ffffff;
+      padding: 1rem;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .navbar h1 {
+      font-size: 1.5rem;
+    }
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links ul li {
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-links ul li:hover {
+      color: #26a69a; /* Teal accent on hover */
+    }
+
+    /* ------------------------------ 
+       HERO SECTION
+    ------------------------------ */
+    .hero {
+      background-color: #212121;  /* Slightly different dark for hero */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      color: #bbb;
+    }
+    .hero button {
+      background-color: #26a69a; /* Teal accent button */
+      color: #121212;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+      border-radius: 4px;
+    }
+    .hero button:hover {
+      background-color: #1f857b;
+      transform: scale(1.03);
+    }
+
+    /* ------------------------------ 
+       SERVICES SECTION
+    ------------------------------ */
+    .services {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .service-box {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 2rem;
+      flex: 1 1 calc(33% - 2rem);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+      min-width: 250px;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+    .service-box p {
+      line-height: 1.6;
+      color: #bbb;
+    }
+
+    /* ------------------------------ 
+       ABOUT SECTION
+    ------------------------------ */
+    .about {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .about p {
+      font-size: 1.125rem;
+      color: #bbb;
+    }
+
+    /* ------------------------------ 
+       CONTACT SECTION
+    ------------------------------ */
+    #contact {
+      padding: 3rem 2rem;
+      text-align: center;
+      background-color: #1b1b1b;
+    }
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    #contact p {
+      font-size: 1.125rem;
+      margin: 0.5rem 0;
+      color: #bbb;
+    }
+    #contact a {
+      color: #26a69a;
+      text-decoration: underline;
+    }
+    #contact form {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #contact input,
+    #contact textarea,
+    #contact button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 4px;
+    }
+    #contact input,
+    #contact textarea {
+      background-color: #2c2c2c;
+      color: #ddd;
+    }
+    #contact input::placeholder,
+    #contact textarea::placeholder {
+      color: #bbb;
+    }
+    #contact button {
+      background-color: #26a69a;
+      color: #121212;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    #contact button:hover {
+      background-color: #1f857b;
+      transform: scale(1.02);
+    }
+
+    /* ------------------------------ 
+       FOOTER
+    ------------------------------ */
+    footer {
+      background-color: #1b1b1b;
+      color: #999;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.875rem;
+    }
+
+    /* ------------------------------ 
+       RESPONSIVE DESIGN
+    ------------------------------ */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-links ul li {
+        width: 100%;
+        padding: 0.5rem 0;
+        text-align: left;
+      }
+    }
+    @media (max-width: 600px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Your AI Consulting Business</h1>
-        <p>Innovative AI Solutions for Your Business</p>
-    </header>
-    <nav>
+  <!-- Navigation / Header -->
+  <header>
+    <div class="navbar">
+      <h1>AI Consulting</h1>
+      <nav class="nav-links" aria-label="Main Navigation">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
-    <main>
-        <section id="home">
-            <h2>Welcome</h2>
-            <p>Welcome to Your AI Consulting Business. We provide cutting-edge AI solutions to help your business thrive in the digital age.</p>
-        </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>AI Strategy Consulting:</strong> Develop and implement AI strategies tailored to your business needs.</li>
-                <li><strong>Machine Learning Implementation:</strong> Integrate machine learning models to enhance your operations.</li>
-                <li><strong>Data Analysis:</strong> Leverage data to drive informed decision-making and optimize performance.</li>
-            </ul>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>With years of experience in artificial intelligence and machine learning, our team is dedicated to delivering solutions that drive success.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or want to work with us? Reach out through the form below:</p>
-            <form action="mailto:Brunou.Benjamin@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
+      </nav>
+    </div>
+  </header>
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Making AI Accessible</h2>
+      <p>
+        I’m a freelance AI enthusiast helping people and small businesses explore the power of AI.
+        Whether you’re curious about ChatGPT or looking to streamline a workflow, I’ll help you find practical, accessible solutions.
+      </p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Get in Touch
+      </button>
+    </section>
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="service-box">
+        <h3>Personalized AI Training</h3>
+        <p>
+          I offer 1-on-1 or small-group sessions on how to use ChatGPT effectively. We’ll focus on real-world tasks
+          so you can leverage AI in your daily life or small business without feeling overwhelmed.
+        </p>
+      </div>
+      <div class="service-box">
+        <h3>Use Case Brainstorming</h3>
+        <p>
+          Unsure how AI could help you? Let’s talk through ideas for automating customer service, 
+          enhancing marketing content, or simplifying your processes. I’ll help you pinpoint practical opportunities.
+        </p>
+      </div>
+      <div class="service-box">
+        <h3>Process Modeling</h3>
+        <p>
+          With experience in business process modeling, I can map out your workflows and suggest 
+          low-cost ways to integrate AI, boosting productivity and keeping your personal details minimal.
+        </p>
+      </div>
+    </section>
 
-                <input type="submit" value="Send">
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Your AI Consulting Business</p>
-    </footer>
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div>
+        <h2>A Bit About Me</h2>
+        <p>
+          I’m just an everyday tech enthusiast who fell in love with the possibilities of AI. 
+          I believe these tools should be accessible, fun, and genuinely helpful—especially for 
+          individuals and smaller operations that often get overlooked by big tech solutions.
+        </p>
+        <p>
+          My background includes using ChatGPT for creative writing, basic automation, and process 
+          modeling for small businesses. I’ve seen firsthand how AI can make life easier, 
+          and I’m excited to share that knowledge in a personal, friendly way.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Reach Out</h2>
+      <p>
+        Interested in learning more? Whether you want a quick chat or an in-depth session, I’m here to help.
+      </p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Replace with your Formspree ID if needed -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea><br><br>
+        
+        <button type="submit">Send</button>
+      </form>
+      <p>
+        <i class="fas fa-envelope"></i> Email: <a href="mailto:brunou.benjamin@gmail.com">brunou.benjamin@gmail.com</a>
+      </p>
+      <p>
+        Or connect with me on <i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>, 
+        <i class="fab fa-twitter"></i> <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>, 
+        and <i class="fab fa-facebook"></i> <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a>.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AI Side-Hustle. All rights reserved.</p>
+  </footer>
 </body>
 </html>
